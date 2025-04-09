@@ -1,1 +1,1 @@
-print("hello from Windows Update Tracker v1")
+print("hello world")
