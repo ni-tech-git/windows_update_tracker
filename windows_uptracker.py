@@ -1,12 +1,28 @@
+def add_new_server():
+    global new_server
+    global new_server_OS
+    global new_server_patch
+    global new_server_record
+                                                              
+    new_server = str(input("\nWhat is the name of the new server?\n\n"))
+    new_server_OS = str(input("\nWhat OS is it running\n\n"))
+    new_server_patch = str(input("\nWhat is its most reason security patch (KB number)\n\n"))
+
+    new_server_record = ({new_server},{new_server_OS},{new_server_patch})
+
+    print(f"The following has been added {new_server_record}")
+
+ 
+
 print("\nWelcome to the Windows Update Tracker v1.1\n")
 
 user_choice = int(input("Press 1 to see the status of all servers\nPress 2 to add a new server.\nPress 3 to update an existing server.\nPress 4 to delete a server\n\n")) 
 
 if user_choice == 1:
-    current_patch = str(input("\nWhat is the current security patch KB?\n"))
     print(f"\n Here is the current patch status of all servers\n")
 elif user_choice == 2:
     print("\nAdding a new server and it's associated patch\n")
+    add_new_server()
 elif user_choice== 3:
     print("\nUpdating an exisiting server and its associated patch\n")
 elif user_choice== 4:
