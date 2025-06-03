@@ -1,3 +1,17 @@
+# ------------------ Database initialisation ------------------ #
+import sqlite3
+
+conn = sqlite3.connect('windows_uptracker.db')    #connection object for database. File saved as windows_uptracker.db
+
+cursor = conn.cursor()                                                              #variable called cursor allows for sql commands
+
+cursor.execute("""CREATE TABLE IF NOT EXISTS server_status (          
+                server_hostname text,
+                operating_system text,
+                installed_update text
+                  )           
+                """)
+
 # ------------------ User Interactions ------------------ #
 
 print("\nWelcome to the Windows Update Tracker v1.1\n")
